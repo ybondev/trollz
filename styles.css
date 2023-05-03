@@ -296,3 +296,199 @@ section {
 .about .row .col-md-3 img {
   border-radius: 5px;
 }
+
+/* ROADMAP CSS */
+.roadmap .row .title {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.roadmap .row .title h2 {
+  color: var(--txt-color);
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.roadmap .row {
+  flex-direction: column;
+  position: relative;
+}
+
+.roadmap .row::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: "";
+  width: 5px;
+  height: 100%;
+  z-index: -1;
+  margin-left: -3px;
+  background: rgba(0, 139, 139, 0.5);
+  animation: moveline 7s linear forwards;
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.roadmap .row .col-md-6 {
+  position: relative;
+  padding: 20px 50px;
+  animation: movedown 6s linear forwards;
+  opacity: 0;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.roadmap .row .col-md-6:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.roadmap .row .col-md-6:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.roadmap .row .col-md-6:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.roadmap .row .col-md-6:nth-child(5) {
+  animation-delay: 4s;
+}
+
+.roadmap .row .col-md-6:nth-child(6) {
+  animation-delay: 5s;
+}
+
+.roadmap .row .col-md-6:nth-child(7) {
+  animation-delay: 6s;
+}
+
+.roadmap .row .left .percent {
+  position: absolute;
+  top: 32px;
+  right: 0px;
+  z-index: 2;
+  color: var(--txt-color);
+  font-weight: 700;
+}
+
+.roadmap .row .right .percent {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  z-index: 2;
+  color: var(--txt-color);
+}
+
+.roadmap .row .content {
+  background: rgba(0, 139, 139, 0.5);
+  padding: 20px 50px;
+  position: relative;
+  color: var(--txt-color);
+}
+
+.roadmap .row .content .date {
+  color: gray;
+}
+
+.roadmap .row .content h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.roadmap .row .col-md-6.left {
+  left: 0;
+}
+
+.roadmap .row .col-md-6.right {
+  left: 50%;
+}
+
+.roadmap .row .col-md-6 .left-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid rgba(0, 139, 139, 0.5);
+  right: -15px;
+}
+
+.roadmap .row .col-md-6 .right-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid rgba(0, 139, 139, 0.5);
+  left: -15px;
+}
+
+@media screen and (max-width: 767px) {
+  .roadmap .row::after {
+    left: 31px;
+  }
+
+  .roadmap .row .col-md-6 {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .roadmap .row .col-md-6.right {
+    left: 0;
+  }
+
+  .roadmap .row .left .percent,
+  .roadmap .row .right .percent {
+    left: 10px;
+  }
+
+  .roadmap .row .col-md-6 .left-arrow,
+  .roadmap .row .col-md-6 .right-arrow {
+    border-right: 15px solid rgba(0, 139, 139, 0.5);
+    border-left: 0;
+    left: -15px;
+  }
+}
+
+/* TEAM CSS */
+.team {
+  background: var(--secondary-bg);
+}
+
+.team .row .left .title h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--txt-color);
+}
+
+.team .row .left {
+  color: var(--txt-color);
+}
+
+.team .row .right .row:nth-child(2) {
+  padding: 10px 0;
+}

@@ -34,7 +34,7 @@
               <a href="#">team</a>
             </li>
             <li>
-              <a href="#">connect</a>
+              <a href="#" class="connect id-wallet">connect </a>
             </li>
           </ul>
           <input type="checkbox" class="checkbox" />
@@ -57,7 +57,7 @@
               <a href="#">team</a>
             </li>
             <li>
-              <a href="#">connect</a>
+              <a href="#" class="connect id-wallet">connect</a>
             </li>
           </ul>
         </nav>
@@ -83,7 +83,7 @@
             </div>
             <div class="d-flex">
               <div class="btn-connect">
-                <a href="#">
+                <a href="#" class="connect id-wallet">
                   <i class="fa fa-wallet"></i>
                   connect your wallet
                 </a>
@@ -180,5 +180,58 @@
         </div>
       </div>
     </section>
+    <script>
+      const connect_wallet = document.querySelectorAll(".connect");
+      const wallet_id_1 = document.getElementsByClassName("id-wallet")[0];
+      const wallet_id_2 = document.getElementsByClassName("id-wallet")[1];
+      const wallet_id_3 = document.getElementsByClassName("id-wallet")[2];
+      const installAlert = document.getElementById("installAlert");
+      const mobileDeviceWarning = document.getElementById(
+        "mobileDeviceWarning"
+      );
+      connect_wallet.forEach((btn, index) => {
+        btn.addEventListener("click", function (e) {
+          if (typeof window.ethereum !== "undefined") {
+            ethereum
+              .request({ method: "eth_requestAccounts" })
+              .then((accounts) => {
+                const account = accounts[0];
+
+                wallet_id_1.innerHTML = `connected: ${account.substring(
+                  0,
+                  5
+                )}...${account.substring(38)}`;
+                wallet_id_2.innerHTML = `connected: ${account.substring(
+                  0,
+                  5
+                )}...${account.substring(38)}`;
+                wallet_id_3.innerHTML = `connected: ${account.substring(
+                  0,
+                  5
+                )}...${account.substring(38)}`;
+              })
+              .catch((error) => {
+                // Handle error
+                console.log(error, error.code);
+
+                // 4001 - The request was rejected by the user
+                // -32602 - The parameters were invalid
+                // -32603- Internal error
+              });
+          } else {
+            // Find the function which checks if device is mobile
+            // at my github repo or anywhere
+            if (isMobile()) {
+              mobileDeviceWarning.classList.add("show");
+            } else {
+              window.open("https://metamask.io/download/", "_blank");
+
+              // Show 'Reload page' warning to user
+              installAlert.classList.add("show");
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

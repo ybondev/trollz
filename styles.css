@@ -219,7 +219,7 @@ section {
 
 @media screen and (max-width: 767px) {
   .home .row .left {
-    text-align: center;
+    /* text-align: center; */
   }
 
   .home .d-flex .btn-connect a {
@@ -236,7 +236,7 @@ section {
 
   .home .d-flex {
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
   }
 }
 

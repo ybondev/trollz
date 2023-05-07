@@ -164,6 +164,8 @@ header .checkbox {
 
 section {
   padding: 160px 0 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* HOME CSS */

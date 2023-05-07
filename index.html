@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trollz</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
@@ -66,7 +67,7 @@
     <section class="home" id="home">
       <div class="container">
         <div class="row gy-5">
-          <div class="col-md-6 left">
+          <div class="col-md-6 left" data-aos="fade-right">
             <h2>- nft collection -</h2>
             <h1>the trollz</h1>
             <div class="text">
@@ -95,7 +96,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 right">
+          <div class="col-md-6 right" data-aos="fade-left">
             <img
               src="https://media4.giphy.com/media/E3y79zUo2V4v8AFG2V/giphy.gif"
               alt="..."
@@ -103,7 +104,7 @@
               class="img-fluid"
             />
           </div>
-          <div class="btn-mint">
+          <div class="btn-mint" data-aos="fade-up">
             <a href="">mint now!!</a>
           </div>
         </div>
@@ -112,7 +113,7 @@
     <section class="about" id="about">
       <div class="container">
         <div class="row gy-5">
-          <div class="col-md-6 left">
+          <div class="col-md-6 left" data-aos="fade-right">
             <img
               src="https://uploads.laborx.com/gig/thumb_cropped_618x404_ajiQhj1gP35PV8bHtisasSMUw2vkSj5d.png"
               alt="..."
@@ -120,7 +121,7 @@
               class="img-fluid"
             />
           </div>
-          <div class="col-md-6 right">
+          <div class="col-md-6 right" data-aos="fade-left">
             <h2>about trollz</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero,
@@ -145,7 +146,7 @@
               possimus doloremque vel sed.
             </p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" data-aos="fade-down">
             <img
               src="https://i.guim.co.uk/img/media/ef8492feb3715ed4de705727d9f513c168a8b196/37_0_1125_675/master/1125.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=d456a2af571d980d8b2985472c262b31"
               alt="..."
@@ -153,7 +154,7 @@
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" data-aos="fade-up">
             <img
               src="https://watcher.guru/news/wp-content/uploads/2021/08/unnamed-2-1.png"
               alt="..."
@@ -161,7 +162,7 @@
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" data-aos="fade-down">
             <img
               src="https://i.pinimg.com/736x/10/87/f6/1087f6961397b87c55f659936d7db7fc.jpg"
               alt="..."
@@ -169,7 +170,7 @@
               class="img-fluid"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" data-aos="fade-up">
             <img
               src="https://watcher.guru/news/wp-content/uploads/2021/08/unnamed.png.webp"
               alt="..."
@@ -183,7 +184,7 @@
     <section class="roadmap" id="roadmap">
       <div class="container">
         <div class="row">
-          <div class="title">
+          <div class="title" data-aos="fade-up">
             <h2>trollz roadmap</h2>
           </div>
           <div class="col-md-6 left">
@@ -270,7 +271,7 @@
     <section class="team" id="team">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 left">
+          <div class="col-md-8 left" data-aos="fade-right">
             <div class="title">
               <h2>the team</h2>
             </div>
@@ -294,7 +295,7 @@
               nemo temporibus et adipisci velit.
             </p>
           </div>
-          <div class="col-lg-4 right">
+          <div class="col-lg-4 right" data-aos="fade-left">
             <div class="row">
               <div class="col-6">
                 <img
@@ -334,6 +335,7 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       const connect_wallet = document.querySelectorAll(".connect");
       const wallet_id_1 = document.getElementsByClassName("id-wallet")[0];
@@ -385,6 +387,11 @@
             }
           }
         });
+      });
+
+      AOS.init({
+        delay: 500,
+        duration: 1000, // values from 0 to 3000, with step 50ms
       });
     </script>
   </body>
